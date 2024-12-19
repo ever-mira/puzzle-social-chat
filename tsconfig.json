@@ -9,10 +9,7 @@
     "outDir": "tscOutDir",
     "preserveConstEnums": true,
     "esModuleInterop": true,
-    "types": [
-        "jest",
-        "@cloudflare/workers-types/2023-07-01"
-    ]
+    "types": ["jest", "@cloudflare/workers-types/2023-07-01"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

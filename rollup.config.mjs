@@ -12,6 +12,7 @@ export default {
   output: {
     exports: 'named',
     format: 'es',
+    // dir: 'dist',
     file: 'dist/index.mjs',
     sourcemap: true,
   },

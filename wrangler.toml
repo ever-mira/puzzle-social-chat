@@ -1,13 +1,24 @@
-name = "yellow-dawn-0c2f"
+name = "puzzle-chat"
 main = "./dist/index.mjs"
 compatibility_date = "2022-09-08"
 
 [build]
 command = "npm install && npm test && npm run build"
 
-[durable_objects]
-bindings = [{name = "COUNTER", class_name = "CounterTs"}]
+[[durable_objects.bindings]]
+name = "CHATROOM"
+class_name = "ChatRoom"
+
+[observability.logs]
+enabled = true
+
+[env.dev]
+build.command = "npm run build"
+
+[[env.dev.durable_objects.bindings]]
+name = "CHATROOM"
+class_name = "ChatRoom"
 
 [[migrations]]
-tag = "v1" # Should be unique for each entry
-new_classes = ["CounterTs"]
+tag = "v1"
+new_classes = ["ChatRoom"]
